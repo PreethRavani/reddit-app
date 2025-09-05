@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Cricket Mania - Devvit App Preview</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="reddit-container">
+        <!-- Reddit Post Header -->
+        <div class="reddit-header">
+            <div class="reddit-vote">
+                <div class="vote-arrow"></div>
+                <span style="font-weight: bold; color: #ff4500;">127</span>
+                <div class="vote-arrow down"></div>
+            </div>
+            <div>
+                <div class="post-title">🏏 BRUTAL HAND CRICKET GAME! 💥 - Play Now!</div>
+                <div class="post-meta">
+                    Posted by u/cricketmod • 2 hours ago • r/cricket
+                </div>
+            </div>
+        </div>
+
+        <!-- Devvit App Content -->
+        <div class="devvit-app">
+            <div class="game-container">
+                <!-- Main Menu Screen -->
+                <div id="mainMenu" class="screen active">
+                    <div style="text-align: center;">
+                        <h1 class="game-title">🏏 HAND CRICKET</h1>
+                        <div class="game-subtitle">BRUTAL CRICKET ACTION!</div>
+                    </div>
+                    
+                    <button class="menu-button" onclick="showScreen('gameMode')">
+                        🌐 PLAY WITH REDDIT USERS
+                    </button>
+                    <button class="menu-button" onclick="showScreen('computer')">
+                        🤖 PLAY VS COMPUTER
+                    </button>
+                    <button class="menu-button secondary" onclick="showScreen('leaderboard')">
+                        🏆 HALL OF BRUTALITY
+                    </button>
+                    
+                    <div style="text-align: center; margin-top: 20px;">
+                        <small style="color: #000; font-weight: bold;">
+                            MADE FOR REDDIT • POWERED BY DEVVIT
+                        </small>
+                    </div>
+                </div>
+
+                <!-- Game Mode Selection Screen -->
+                <div id="gameMode" class="screen">
+                    <div style="text-align: center;">
+                        <h2 style="font-size: 2em; font-weight: 800; color: #000; text-transform: uppercase; margin-bottom: 10px;">SELECT BRUTAL MODE</h2>
+                        <div class="game-subtitle">CHOOSE YOUR BATTLE FORMAT</div>
+                    </div>
+                    
+                    <div class="game-modes">
+                        <div class="game-mode-card" onclick="startGame(1)">
+                            <div style="font-size: 1.2em; margin-bottom: 5px;">⚡ QUICK</div>
+                            <div>1 OVER • 1 WICKET</div>
+                        </div>
+                        <div class="game-mode-card" onclick="startGame(3)">
+                            <div style="font-size: 1.2em; margin-bottom: 5px;">🔥 POWER</div>
+                            <div>3 OVERS • 3 WICKETS</div>
+                        </div>
+                        <div class="game-mode-card" onclick="startGame(5)">
+                            <div style="font-size: 1.2em; margin-bottom: 5px;">⚔️ BATTLE</div>
+                            <div>5 OVERS • 5 WICKETS</div>
+                        </div>
+                        <div class="game-mode-card" onclick="startGame(10)">
+                            <div style="font-size: 1.2em; margin-bottom: 5px;">🏆 CHAMPIONSHIP</div>
+                            <div>10 OVERS • 10 WICKETS</div>
+                        </div>
+                    </div>
+                    
+                    <button class="menu-button secondary" onclick="showScreen('mainMenu')">
+                        ← BACK TO MAIN
+                    </button>
+                </div>
+
+                <!-- Difficulty Selection for Computer Mode -->
+                <div id="computer" class="screen">
+                    <div style="text-align: center;">
+                        <h2 style="font-size: 2em; font-weight: 800; color: #000; text-transform: uppercase; margin-bottom: 10px;">VS COMPUTER</h2>
+                        <div class="game-subtitle">CHOOSE DIFFICULTY</div>
+                    </div>
+                    
+                    <div class="game-modes">
+                        <div class="game-mode-card difficulty-btn easy selected" onclick="selectDifficulty('easy')">
+                            <div style="font-size: 1.2em; margin-bottom: 5px;">😊 EASY</div>
+                            <div>AI is chill</div>
+                        </div>
+                        <div class="game-mode-card difficulty-btn medium" onclick="selectDifficulty('medium')">
+                            <div style="font-size: 1.2em; margin-bottom: 5px;">😐 MEDIUM</div>
+                            <div>AI is decent</div>
+                        </div>
+                        <div class="game-mode-card difficulty-btn hard" onclick="selectDifficulty('hard')">
+                            <div style="font-size: 1.2em; margin-bottom: 5px;">😈 HARD</div>
+                            <div>AI is brutal</div>
+                        </div>
+                    </div>
+                    
+                    <button class="menu-button" onclick="showScreen('gameMode')">
+                        CONTINUE
+                    </button>
+                    
+                    <button class="menu-button secondary" onclick="showScreen('mainMenu')">
+                        ← BACK TO MAIN
+                    </button>
+                </div>
+
+                <!-- Leaderboard Screen -->
+                <div id="leaderboard" class="screen">
+                    <div style="text-align: center;">
+                        <h2 style="font-size: 2em; font-weight: 800; color: #000; text-transform: uppercase; margin-bottom: 10px;">🏆 HALL OF BRUTALITY</h2>
+                        <div class="game-subtitle">TOP BRUTAL PERFORMERS ON REDDIT</div>
+                    </div>
+                    
+                    <div style="background: #FFFF00; padding: 20px; border: 6px solid #000; margin: 20px 0; box-shadow: 6px 6px 0px #000;">
+                        <div style="font-size: 1.2em; font-weight: 800; color: #000; text-align: center; margin-bottom: 15px;">🏏 HIGHEST RUNS</div>
+                        <div style="color: #000; font-weight: 700;">
+                            <div style="padding: 8px; border-bottom: 2px solid #000;">🥇 1. u/cricketking - 156 RUNS</div>
+                            <div style="padding: 8px; border-bottom: 2px solid #000;">🥈 2. u/sixer_fan - 143 RUNS</div>
+                            <div style="padding: 8px; border-bottom: 2px solid #000;">🥉 3. u/boundary_lord - 128 RUNS</div>
+                            <div style="padding: 8px;">🏏 4. u/brutal_batsman - 112 RUNS</div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #FF0080; padding: 20px; border: 6px solid #000; margin: 20px 0; box-shadow: 6px 6px 0px #000;">
+                        <div style="font-size: 1.2em; font-weight: 800; color: #FFF; text-align: center; margin-bottom: 15px;">⚾ MOST WICKETS</div>
+                        <div style="color: #FFF; font-weight: 700;">
+                            <div style="padding: 8px; border-bottom: 2px solid #FFF;">🥇 1. u/wicket_taker - 23 WICKETS</div>
+                            <div style="padding: 8px; border-bottom: 2px solid #FFF;">🥈 2. u/bowling_beast - 19 WICKETS</div>
+                            <div style="padding: 8px; border-bottom: 2px solid #FFF;">🥉 3. u/strike_master - 17 WICKETS</div>
+                            <div style="padding: 8px;">⚾ 4. u/out_machine - 15 WICKETS</div>
+                        </div>
+                    </div>
+                    
+                    <button class="menu-button secondary" onclick="showScreen('mainMenu')">
+                        ← BACK TO MAIN
+                    </button>
+                </div>
+
+                <!-- Game Screen -->
+                <div id="game" class="screen">
+                    <!-- Scoreboard -->
+                    <div class="scoreboard">
+                        <div class="player-score">
+                            <div style="font-size: 1em; margin-bottom: 5px; font-weight: 800;">YOU</div>
+                            <div id="player-score-display" style="font-size: 1.5em; font-weight: 800;">0/0</div>
+                        </div>
+                        <div class="match-info">
+                            <div id="overs-display">Overs: 0.0/0</div>
+                            <div id="target-display">Target: -</div>
+                            <div id="innings-display">Innings: 1/2</div>
+                        </div>
+                        <div class="player-score">
+                            <div style="font-size: 1em; margin-bottom: 5px; font-weight: 800;">OPPONENT</div>
+                            <div id="computer-score-display" style="font-size: 1.5em; font-weight: 800;">0/0</div>
+                        </div>
+                    </div>
+
+                    <!-- Toss Section -->
+                    <div class="toss-section hidden" id="toss-section">
+                        <div id="toss-status">Let's toss the coin!</div>
+                        <div class="toss-choices">
+                            <button class="toss-button" id="heads-btn" onclick="tossCoin('heads')">Heads</button>
+                            <button class="toss-button" id="tails-btn" onclick="tossCoin('tails')">Tails</button>
+                        </div>
+                        <div class="toss-decision hidden" id="toss-decision">
+                            <div>Toss Won! Pick:</div>
+                            <button class="toss-button" onclick="chooseToss('bat')">Bat</button>
+                            <button class="toss-button" onclick="chooseToss('bowl')">Bowl</button>
+                        </div>
+                        <div id="toss-result"></div>
+                    </div>
+
+                    <!-- Game Status -->
+                    <div class="animation-area" id="status">
+                        Choose mode and difficulty to start!
+                    </div>
+
+                    <!-- Game Area -->
+                    <div class="game-area">
+                        <div class="player-card batting" id="player-card">
+                            <div style="font-size: 1.2em; font-weight: 800; margin-bottom: 15px; color: #000;">YOU</div>
+                            <div style="background: #FFFF00; padding: 10px; border: 3px solid #000; margin-bottom: 10px; color: #000;">
+                                <div>RUNS: <span id="player-score">0</span></div>
+                                <div>WICKETS: <span id="player-wickets">0</span>/<span id="total-wickets">0</span></div>
+                            </div>
+                            <div class="hand-display" id="player-hand"></div>
+                            <div style="background: #00FF80; color: #000; padding: 5px 10px; border: 3px solid #000; font-weight: 800;">
+                                BRUTAL CHOICE ✓
+                            </div>
+                        </div>
+
+                        <div style="padding: 20px;">
+                            <div class="number-buttons hidden" id="choices">
+                                <button class="number-button" onclick="play(1)">1 ☝️</button>
+                                <button class="number-button" onclick="play(2)">2 ✌️</button>
+                                <button class="number-button" onclick="play(3)">3 🤟</button>
+                                <button class="number-button" onclick="play(4)">4 🤘</button>
+                                <button class="number-button" onclick="play(5)">5 🖐️</button>
+                                <button class="number-button" onclick="play(6)">6 🤚</button>
+                            </div>
+                            
+                            <button class="menu-button secondary" id="reset-btn" onclick="resetGame()">
+                                🏠 RESET GAME
+                            </button>
+                        </div>
+
+                        <div class="player-card bowling" id="computer-card">
+                            <div style="font-size: 1.2em; font-weight: 800; margin-bottom: 15px; color: #000;">OPPONENT</div>
+                            <div style="background: #FFFF00; padding: 10px; border: 3px solid #000; margin-bottom: 10px; color: #000;">
+                                <div>RUNS: <span id="computer-score">0</span></div>
+                                <div>WICKETS: <span id="computer-wickets">0</span>/<span id="total-wickets-ai">0</span></div>
+                            </div>
+                            <div class="hand-display" id="computer-hand"></div>
+                            <div style="color: #666;">Thinking...</div>
+                        </div>
+                    </div>
+
+                    <!-- Email Modal -->
+                    <div class="email-modal hidden" id="email-modal">
+                        <div class="email-modal-content">
+                            <h2>Enter Your Email</h2>
+                            <p>Please provide your email to continue playing after 2 matches.</p>
+                            <input type="email" id="email-input" placeholder="your@email.com" required>
+                            <p id="email-error" class="hidden">Please enter a valid email.</p>
+                            <button onclick="submitEmail()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reddit Post Footer -->
+        <div class="reddit-footer">
+            <div class="reddit-action">
+                <span>💬</span>
+                <span>45 Comments</span>
+            </div>
+            <div class="reddit-action">
+                <span>🔗</span>
+                <span>Share</span>
+            </div>
+            <div class="reddit-action">
+                <span>💾</span>
+                <span>Save</span>
+            </div>
+            <div class="reddit-action">
+                <span>🏆</span>
+                <span>Award</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"> </script>
+</body>
+</html>
